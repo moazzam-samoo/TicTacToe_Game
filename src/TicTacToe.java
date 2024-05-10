@@ -56,7 +56,12 @@ public class TicTacToe {
                 tile.setForeground(Color.WHITE);
                 tile.setFont(new Font("Arial", Font.BOLD, 120));
                 tile.setFocusable(false);
-                //end MOZAM 3
+
+
             }
-            }
-}}
+        }
+
+        //check winner \\???
+
+}
+}
