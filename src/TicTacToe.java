@@ -37,12 +37,26 @@ public class TicTacToe {
         textlabel.setOpaque(true);
 
         textpanel.setLayout(new BorderLayout());
-    textpanel.add(textlabel);
-    frame.add(textpanel, BorderLayout.NORTH);
+        textpanel.add(textlabel);
+        frame.add(textpanel, BorderLayout.NORTH);
 
-    boardpanel.setLayout(new GridLayout(3, 3)); // Creates 3 By 3 Layout
-    boardpanel.setBackground(Color.black);
-    frame.add(boardpanel);
-   
-    }
-}
+        boardpanel.setLayout(new GridLayout(3, 3)); // Creates 3 By 3 Layout
+        boardpanel.setBackground(Color.black);
+        frame.add(boardpanel);
+
+
+        for(int r =0; r < 3 ; r++){
+            for (int c = 0 ; c < 3 ; c++) {
+                JButton tile = new JButton();
+                board[r][c] = tile;
+                boardpanel.add(tile);
+
+                // Color inside the Boxes
+                tile.setBackground(Color.BLACK);
+                tile.setForeground(Color.WHITE);
+                tile.setFont(new Font("Arial", Font.BOLD, 120));
+                tile.setFocusable(false);
+                //end MOZAM 3
+            }
+            }
+}}
