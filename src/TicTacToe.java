@@ -29,6 +29,13 @@ public class TicTacToe {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// For Exiting Program when you click on X on the top right
         frame.setLayout(new BorderLayout());
 
+        textlabel.setBackground(Color.black);
+        textlabel.setForeground(Color.WHITE);
+        textlabel.setFont(new Font("Arial",Font.BOLD,50));
+        textlabel.setHorizontalAlignment(JLabel.CENTER); // Set our text on center instead of left
+        textlabel.setText("Tic-Tac-Toe");
+        textlabel.setOpaque(true);
+
    
     }
 }
