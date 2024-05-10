@@ -62,6 +62,22 @@ public class TicTacToe {
         }
 
         //check winner \\???
-
+    /*    void checkWinner(){
+            // Horizontal
+           for(int r = 0 ; r < 3 ; r++){
+            if (board[r][0].getText()== "") continue;
+        
+            if (board[r][0].getText()==board[r][1].getText()&&
+                 board[r][1].getText()== board[r][2].getText()){
+        
+                    for(int i = 0; i < 3 ; i++){
+                        setWinner(board[r][i]);
+                    }
+                    
+                    gameOver = true;
+                    return;
+        
+                 }
+           } */
 }
 }
