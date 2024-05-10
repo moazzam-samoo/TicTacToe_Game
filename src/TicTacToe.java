@@ -107,6 +107,11 @@ public class TicTacToe {
 //                }
 //            }
 
+//        void setWinner(JButton tile){
+//            tile.setForeground(Color.green);
+//            tile.setBackground(Color.DARK_GRAY);
+//            textlabel.setText(currentPlayer + " is the Winner!");
+//        } //end mehak 5
 
 
         }
