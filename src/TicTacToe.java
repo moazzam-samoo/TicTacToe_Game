@@ -14,16 +14,16 @@ public class TicTacToe {
 
     JButton board[][] = new JButton[3][3];
 
-    String playerX="X";
-    String playerO="O";
-    String currentPlayer= playerO;
+    String playerX = "X";
+    String playerO = "O";
+    String currentPlayer = playerO;
     boolean gameOver = false;
 
     int turns = 0;
 
-    TicTacToe(){
+    TicTacToe() {
         frame.setVisible(true);
-        frame.setSize(boardwidth,boardheight);
+        frame.setSize(boardwidth, boardheight);
         frame.setLocationRelativeTo(null); // Opening location on Center of Screen
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// For Exiting Program when you click on X on the top right
@@ -31,7 +31,7 @@ public class TicTacToe {
 
         textlabel.setBackground(Color.black);
         textlabel.setForeground(Color.WHITE);
-        textlabel.setFont(new Font("Arial",Font.BOLD,50));
+        textlabel.setFont(new Font("Arial", Font.BOLD, 50));
         textlabel.setHorizontalAlignment(JLabel.CENTER); // Set our text on center instead of left
         textlabel.setText("Tic-Tac-Toe");
         textlabel.setOpaque(true);
@@ -45,8 +45,8 @@ public class TicTacToe {
         frame.add(boardpanel);
 
 
-        for(int r =0; r < 3 ; r++){
-            for (int c = 0 ; c < 3 ; c++) {
+        for (int r = 0; r < 3; r++) {
+            for (int c = 0; c < 3; c++) {
                 JButton tile = new JButton();
                 board[r][c] = tile;
                 boardpanel.add(tile);
@@ -57,27 +57,57 @@ public class TicTacToe {
                 tile.setFont(new Font("Arial", Font.BOLD, 120));
                 tile.setFocusable(false);
 
+                // Clicking the Tile sets text of Current Player so either  ( X or O )
+                tile.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e){
+                        JButton tile =(JButton) e.getSource();
+                        if (gameOver) return;
+
+                        // Makes it so You can't overwrie on a tile
+                        if (tile.getText()== "") {
+
+                            tile.setText(currentPlayer);
+
+                            turns++;
+//                    checkWinner();
+
+                            // Shows who's turn is it
+                            if (!gameOver) {
+                                currentPlayer = currentPlayer == playerO ? playerX : playerO;
+                                textlabel.setText(currentPlayer+ "'s turn.");
+                            }
+
+
+                        }
+
+
+                    }
+                });
 
             }
         }
 
+
         //check winner \\???
-    /*    void checkWinner(){
-            // Horizontal
-           for(int r = 0 ; r < 3 ; r++){
-            if (board[r][0].getText()== "") continue;
-        
-            if (board[r][0].getText()==board[r][1].getText()&&
-                 board[r][1].getText()== board[r][2].getText()){
-        
-                    for(int i = 0; i < 3 ; i++){
-                        setWinner(board[r][i]);
-                    }
-                    
-                    gameOver = true;
-                    return;
-        
-                 }
-           } */
-}
-}
+//        void checkWinner () {
+//            // Horizontal
+//            for (int r = 0; r < 3; r++) {
+//                if (board[r][0].getText() == "") continue;
+//
+//                if (board[r][0].getText() == board[r][1].getText() &&
+//                        board[r][1].getText() == board[r][2].getText()) {
+//
+////                    for(int i = 0; i < 3 ; i++){
+////                        setWinner(board[r][i]);
+////                    }
+////
+//                    gameOver = true;
+//                    return;
+//
+//                }
+//            }
+
+
+
+        }
+    }
