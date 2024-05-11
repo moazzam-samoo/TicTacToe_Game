@@ -106,8 +106,8 @@ public class TicTacToe {
 
                 }
             }
-        
-        
+
+
             //Vertical
         for (int c = 0; c < 3; c++) {
             if (board[0][c].getText() == "") continue;
@@ -121,13 +121,17 @@ public class TicTacToe {
                 return;
             }
         }
+            // Diagonally
+            if (board[0][0].getText() == board[1][1].getText() &&
+                    board[1][1].getText() == board[2][2].getText() &&
+                    board[0][0].getText() != "") {
+                for (int i = 0; i < 3; i++) {
+                    setWinner(board[i][i]);
+                }
+                gameOver = true;
+                return;
+            }
         }
-
-        //Diagonally
-        // mehak 4
-
-
-        //end mehak4
 
         
       void setWinner(JButton tile){
