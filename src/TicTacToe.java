@@ -153,5 +153,10 @@ public class TicTacToe {
         } 
 
 
-        
+    void setTie(JButton tile){
+        tile.setBackground(Color.RED);
+        tile.setForeground(Color.DARK_GRAY);
+        textlabel.setText("Tie");
+
+    }
     }
