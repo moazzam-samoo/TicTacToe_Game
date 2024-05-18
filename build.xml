@@ -27,10 +27,4 @@
         </jar>
     </target>
 
-    <target name="run" depends="jar">
-        <!-- Set java.awt.headless to true -->
-        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true" failonerror="true">
-            <jvmarg value="-Djava.awt.headless=true"/>
-        </java>
-    </target>
 </project>
