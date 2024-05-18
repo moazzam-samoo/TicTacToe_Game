@@ -1,10 +1,3 @@
-To add local images to your project and reference them in the `README.md`, follow these steps:
-
-1. Place the images in a directory within your project folder. Let's create a directory named `images`.
-2. Update the `README.md` to include the images with appropriate descriptions.
-
-Here's the updated `README.md` file:
-
 # Tic Tac Toe Game
 
 This project is a simple implementation of the classic Tic Tac Toe game using Java Swing for the graphical user interface. It allows two players to play the game by taking turns and provides visual feedback for wins and ties.
